@@ -1,15 +1,14 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 
-function Form() {
+function Form(props) {
+  console.log( "props: ",props)
   const [desc, setDesc] = useState({
     email: "",
     phone: "",
     description: "",
   });
-
-  const handleclick= ()=>{
-    console.log(desc);
-  }
+  const history= useHistory();
 
 
   return (
@@ -63,8 +62,8 @@ function Form() {
             }}
           ></textarea>
         </div>
-        <div className="div1">
-        <button className="btn2" onClick={handleclick}> Submit</button>
+        <div className=" d-flex justify-content-center align-items-center">
+        <button className="btn2" onClick= {()=>{ props.add({email:desc.email,phoneNo:desc.phone,description:desc.description}) ; history.push('/details')}}> Submit</button>
         </div>
       </div>
     </div>

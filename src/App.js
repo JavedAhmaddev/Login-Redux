@@ -1,11 +1,12 @@
 import './App.css';
-import Form from './components/Form';
 import Login from './components/Login';
+import FormContainer from './containers/FormContainer'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import DetailsContainer from './containers/DetailsContainer';
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/form">
-            <Form />
+            <FormContainer />
+          </Route>
+          <Route exact path="/details">
+            <DetailsContainer />
           </Route>
         </Switch>
       

@@ -15,6 +15,8 @@ function Login() {
         {
             history.push("/form")
         }
+        else 
+        alert("Name is:" + defUser + " Password is:" + defPassword)
     }
 
 

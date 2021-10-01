@@ -14,9 +14,7 @@
   border-radius: 5px;
 }
 .btn2{
-  margin: 25px 250px;
-  width: 150px;
-  margin-left: 100px;
+  
   background-color: rgb(95, 95, 241);
   border: 1px solid black;
   border-radius: 5px;
@@ -31,4 +29,12 @@
 }
 body{
   background-color: whitesmoke;
+}
+.divme{
+  font-size: x-large;
+}
+span{
+  font-weight: 800;
+  color:cadetblue;
+  
 }
