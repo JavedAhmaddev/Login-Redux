@@ -1,16 +1,16 @@
 import React, { useState } from "react";
+import { useDispatch, useStore } from "react-redux";
 import { useHistory } from "react-router";
 
-function Form(props) {
-  console.log( "props: ",props)
+function Form() {
+  // console.log( "props: ",props)
   const [desc, setDesc] = useState({
     email: "",
     phone: "",
     description: "",
   });
   const history= useHistory();
-
-
+  const dispatch = useDispatch()
   return (
     <div className="center">
       <div className="row g-3 align-items-center pt-3">
@@ -63,7 +63,7 @@ function Form(props) {
           ></textarea>
         </div>
         <div className=" d-flex justify-content-center align-items-center">
-        <button className="btn2" onClick= {()=>{ props.add({email:desc.email,phoneNo:desc.phone,description:desc.description}) ; history.push('/details')}}> Submit</button>
+        <button className="btn2" onClick= {()=>{ dispatch({type: "ADD_DATA", data: {email:desc.email,phoneNo:desc.phone,description:desc.description}}) ; history.push('/details')}}> Submit</button>
         </div>
       </div>
     </div>
